@@ -1,4 +1,4 @@
-//Desenvolva uma aplicação para cadastrar cliente que fará um crédito em até 12 vezes. Insira na estrutura informações pertinentes ao cliente.
+//Desenvolva uma aplicaÃ§Ã£o para cadastrar cliente que farÃ¡ um crÃ©dito em atÃ© 12 vezes. Insira na estrutura informaÃ§Ãµes pertinentes ao cliente.
 
 #include <iostream>
 #include <locale>
@@ -15,7 +15,7 @@ int main(){
 
 	int total;
 
-	cout << "Qual é o número de clientes a serem ragistrados?" << endl;
+	cout << "Qual Ã© o nÃºmero de clientes a serem registrados?" << endl;
 	cin >> total;
 
 	struct parcelado{
@@ -50,7 +50,7 @@ int main(){
 int inserir_cpf(){
 	int cpf;
 
-	cout << "Qual é o cpf do cliente?" << endl;
+	cout << "Qual Ã© o cpf do cliente?" << endl;
 	cin >> cpf;
 
 	return cpf;
@@ -59,7 +59,7 @@ int inserir_cpf(){
 string inserir_nome(){
 	string nome;
 
-	cout << "Qual é o nome do cliente?" << endl;
+	cout << "Qual Ã© o nome do cliente?" << endl;
 	cin >> nome;
 
 	return nome;
@@ -68,7 +68,7 @@ string inserir_nome(){
 string inserir_endereco(){
 	string endereco;
 
-	cout << "Qual é o endereco do cliente?" << endl;
+	cout << "Qual Ã© o endereco do cliente?" << endl;
 	cin >> endereco;
 
 	return endereco;
@@ -77,7 +77,7 @@ string inserir_endereco(){
 int inserir_anonasc(){
 	int ano;
 
-	cout << "Qual é o ano do cliente?" << endl;
+	cout << "Qual Ã© o ano do cliente?" << endl;
 	cin >> ano;
 
 	return ano;
