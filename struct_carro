@@ -1,0 +1,61 @@
+/*Desenvolva uma aplicação para cadastrar carro. 
+Crie uma estrutura para cadastro ( placa, ano, marca)
+Crie uma estrutura para revisoes (data, local). 
+É previsto 5 revisões.*/
+
+#include <iostream>
+#include <locale>
+using namespace std;
+
+struct revisao{
+    string data;
+    string local;
+};
+    
+typedef struct cadastro{
+    string placa;
+    int ano;
+    string marca;
+    int mes;
+    revisao preventiva;
+} cadastro; 
+
+string ad_placa();
+int ad_ano();
+string ad_marca();
+int ad_mes();
+
+
+
+
+
+int main(){
+    setlocale(LC_ALL,"Portuguese");
+    
+    int total;
+    cout << "Quantos carros serão cadastrados?" << endl;
+    cin >> total;
+    
+    cadastro carro[total];
+    
+    for (int i = 0; i < total; i++){
+        carro[i].placa = ad_placa();
+    }
+    
+    for (int i = 0; i < total; i++){
+        cout << carro[i].placa ;
+    }
+    
+    
+    return 0;
+}
+
+string ad_placa(){
+    string placa;
+    
+    cout << "Qual é a placa do carro?" << endl;
+    cin >> placa;
+    
+    return placa;
+}
+
