@@ -8,7 +8,7 @@ Crie uma estrutura para revisoes (data, local).
 using namespace std;
 
 struct revisao{
-    string data;
+    int data;
     string local;
 };
     
@@ -24,15 +24,13 @@ string ad_placa();
 int ad_ano();
 string ad_marca();
 int ad_mes();
-
-
-
+revisao ad_revisao(revisao preventiva);
 
 
 int main(){
     setlocale(LC_ALL,"Portuguese");
     
-    int total;
+    int total, escolha;
     cout << "Quantos carros serão cadastrados?" << endl;
     cin >> total;
     
@@ -40,10 +38,37 @@ int main(){
     
     for (int i = 0; i < total; i++){
         carro[i].placa = ad_placa();
+        carro[i].ano = ad_ano();
+        carro[i].marca = ad_marca();
+        carro[i].mes = ad_mes();
+        carro[i].preventiva.data = carro[i].ano + 2;
+        cout << "Escolha um centro para realizar a preventiva:\n1 - São Paulo\n2 - Campinas\n3 - Araras" << endl;
+        cin >> escolha;
+        
+        switch(escolha){
+            case 1:
+                carro[i].preventiva.local = "São Paulo";
+                break;
+            
+            case 2:
+                carro[i].preventiva.local = "Campinas";
+                break;
+                
+            case 3:
+                carro[i].preventiva.local = "Araras";
+                break;
+        }
     }
     
     for (int i = 0; i < total; i++){
-        cout << carro[i].placa ;
+        system("cls");
+        cout << "-------------CARRO " << i+1 << "-------------" << endl;
+        cout << "PLACA: " << carro[i].placa << endl;
+        cout << "ANO: " << carro[i].ano << endl;
+        cout << "MARCA: " << carro[i].marca <<endl;
+        cout << "MÊS DA COMPRA: " << carro[i].mes <<endl;
+        cout << "O PRÓXIMO ANO DA REVISÃO: " << carro[i].preventiva.data <<endl;
+        cout << "LOCAL DA REVISÃO: " << carro[i].preventiva.local <<endl;
     }
     
     
@@ -59,3 +84,29 @@ string ad_placa(){
     return placa;
 }
 
+int ad_ano(){
+    int ano;
+    
+    cout << "Qual é o ano do carro?" << endl;
+    cin >> ano;
+    
+    return ano;
+}
+
+string ad_marca(){
+    string marca;
+    
+    cout << "Qual é a marca do carro?" << endl;
+    cin >> marca;
+    
+    return marca;
+}
+
+int ad_mes(){
+    int mes;
+    
+    cout << "Em qual mês o carro foi comprado carro?" << endl;
+    cin >> mes;
+    
+    return mes;
+}
